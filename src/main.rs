@@ -10,12 +10,15 @@ fn main() {
     let mut round_played: u32 = 1;
 
     loop {
-        println!(
-            "{}",
-            "welcome to game this is a rock paper scissors game".yellow()
-        );
-        println!("{} {}", "for playing game please write rock or paper or scissors and for quiting game write q or quite , good luck game round".yellow() ,  round_played);
+        if round_played == 1 {
+            println!(
+                "{}",
+                "welcome to game this is a rock paper scissors game".yellow()
+            );
+            println!("{}", "for playing game please write rock or paper or scissors and for quiting game write q or quite , good luck game round".yellow());
+        }
 
+        println!("{} round {}", "input rock paper scissors".blue() , round_played);
         let system_play_index = rand::thread_rng().gen_range(1..STATES.len());
         let system_play_state = STATES[system_play_index];
 
